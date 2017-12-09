@@ -11,6 +11,8 @@ export const GET_METADATA_METHOD_NAME = 'getMetadata';
 export const METADATA_ACTION_NAME = 'preloadMetadata';
 
 const withReactRouterMetadata = (
+        // TODO: REMOVE this param - it will no longer be required.
+        // TODO - instead, consider 1st arg being an ACTION or.. an array of ACTIONS -> use them to VERIFY the STATIC METHOD is correctly applied.
         mapParamsToProps?: (actionParams: Object, routerCtx: Object) => Object = (params) => params,
         options?: {
             metadataActionName?: string,
