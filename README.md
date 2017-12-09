@@ -7,6 +7,11 @@
 [![Code Climate](https://img.shields.io/codeclimate/github/adam-26/react-router-metadata.svg)](https://codeclimate.com/github/adam-26/react-router-metadata)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
+---
+### WARNING
+**This is a WORK IN PROGRESS - the API will change**
+---
+
 Assigns HTML metadata to [react-router-config](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config) routes using static functions.
 
 Internally, [react-html-metadata](https://github.com/adam-26/react-html-metadata) is used to support the use of metadata with the react SSR stream interface, for more information
