@@ -8,7 +8,6 @@
   },
   "scripts": {
     "build": "rm -rf ./lib; NODE_ENV=production babel ./src -d lib --ignore '__tests__'",
-    "postbuild": "mv -f ./lib/dispatcherAction.js ./dispatcherAction.js",
     "lint": "eslint ./src",
     "ci-jest": "TEST_REPORT_PATH=./.build/test jest --ci --coverage --coverageDirectory ./.build/coverage --testResultsProcessor='./node_modules/jest-junit-reporter'",
     "ci-lint": "eslint ./src --format junit --output-file ./.build/lint/eslint.xml",
