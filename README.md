@@ -17,7 +17,7 @@ Assigns HTML metadata to [react-router-config](https://github.com/ReactTraining/
 Internally, [react-html-metadata](https://github.com/adam-26/react-html-metadata) is used to support the use of metadata with the react SSR stream interface, for more information
 about how to define metadata you should view that packages [readme file](https://github.com/adam-26/react-html-metadata).
 
-### Usage
+## Usage
 
 This package is intended to be used with other packages that invoke the static metadata methods.
 
@@ -31,7 +31,7 @@ This package is intended to be used with other packages that invoke the static m
 ```js
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withReactRouterMetadata } from 'react-router-metadata';
+import withReactRouterMetadata from 'react-router-metadata';
 
 class MetadataDemo extends Component {
 
