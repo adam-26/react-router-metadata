@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/adam-26/react-router-metadata/compare/v1.1.0...v1.1.1) (2017-12-14)
+
+
+### Bug Fixes
+
+* **docs:** syntax ([211b51c](https://github.com/adam-26/react-router-metadata/commit/211b51c))
+* **docs:** syntax ([#6](https://github.com/adam-26/react-router-metadata/issues/6)) ([c5fb2e0](https://github.com/adam-26/react-router-metadata/commit/c5fb2e0))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/adam-26/react-router-metadata/compare/v1.0.3...v1.1.0) (2017-12-14)
 
