@@ -23,7 +23,7 @@ This package is intended to be used with other packages that invoke the static m
 
 **You should use one of the current implementations**:
 
-  * [react-router-dispatcher-metadata](https://github.com/adam-26/react-router-dispatcher-metadata)
+  * [react-router-metadata-action](https://github.com/adam-26/react-router-metadata-action)
 
 #### Defining metadata
 

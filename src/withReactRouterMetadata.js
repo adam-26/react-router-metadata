@@ -10,20 +10,20 @@ import { withMetadata, Metadata, METADATA_ACTION_PARAM_NAME } from 'react-html-m
 export const GET_METADATA_METHOD_NAME = 'getMetadata';
 export const METADATA_ACTION_NAME = 'preloadMetadata';
 
-const withReactRouterMetadata = (
-        // TODO: REMOVE this param - it will no longer be required.
-        // TODO - instead, consider 1st arg being an ACTION or.. an array of ACTIONS -> use them to VERIFY the STATIC METHOD is correctly applied.
+export default function withReactRouterMetadata(
         mapParamsToProps?: (actionParams: Object, routerCtx: Object) => Object = (params) => params,
-        options?: {
+        opts?: {
             metadataActionName?: string,
             staticMethodName?: string,
             actionParamName?: string
-        } = {
-            metadataActionName: METADATA_ACTION_NAME,
-            staticMethodName: GET_METADATA_METHOD_NAME,
-            actionParamName: METADATA_ACTION_PARAM_NAME
-        }
-    ) => {
+        } = {}
+    ) {
+    const options = Object.assign({
+        metadataActionName: METADATA_ACTION_NAME,
+        staticMethodName: GET_METADATA_METHOD_NAME,
+        actionParamName: METADATA_ACTION_PARAM_NAME
+    }, opts);
+
     return (Component) => {
         const componentName = getDisplayName(Component);
         const getMetadata = Component[options.staticMethodName];
@@ -106,6 +106,4 @@ const withReactRouterMetadata = (
         const hoisted = hoistNonReactStatic(ReactRouterMetadata, Component);
         return withRouter(withMetadata('metadata')(hoisted));
     };
-};
-
-export default withReactRouterMetadata;
+}

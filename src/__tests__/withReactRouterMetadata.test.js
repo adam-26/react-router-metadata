@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MemoryRouter } from 'react-router';
+import Html, { Metadata } from 'react-html-metadata';
+import withReactRouterMetadata from '../withReactRouterMetadata';
 import { mount } from './enzyme';
-import Html, { Metadata , withReactRouterMetadata } from '../index';
 
 class TestComponent extends React.Component {
     static propTypes = {
