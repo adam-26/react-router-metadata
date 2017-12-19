@@ -96,21 +96,21 @@ This is **only required if your `getMetadata` implementation uses prop values**.
 
 ##### `options`
 
-* `metadataActionName?: string`:
+* `staticMethodName?: string`:
 
 * The static _method name_ that **must** be invoked on the component before render.
 
 * **default**: preloadMetadata
 
-`staticMethodName?: string`
+`componentStaticMethodName?: string`
 
 * The static _method name_ that **must** be implemented by the developer to return metadata.
 
 * **default**: getMetadata
 
-`actionParamName?: string`
+`metadataPropName?: string`
 
-* The _name_  (or key) used by the action parameters to store the **metadata** instance
+* The _name_  (or key) used by the parameters to store the **metadata** instance
 
 * **default**: metadata
 
