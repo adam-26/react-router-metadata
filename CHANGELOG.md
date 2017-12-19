@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/adam-26/react-router-metadata/compare/v1.1.2...v1.2.0) (2017-12-19)
+
+
+### Bug Fixes
+
+* **conflicts:** resolve conflicts ([a557cc6](https://github.com/adam-26/react-router-metadata/commit/a557cc6))
+* **conflicts:** shrinkwrap ([e67af4d](https://github.com/adam-26/react-router-metadata/commit/e67af4d))
+
+
+### Features
+
+* **code:** Update dependencies ([ab99435](https://github.com/adam-26/react-router-metadata/commit/ab99435))
+* **code:** Update dependencies ([#12](https://github.com/adam-26/react-router-metadata/issues/12)) ([9f76b80](https://github.com/adam-26/react-router-metadata/commit/9f76b80))
+
+
+
 <a name="1.1.2"></a>
 ## [1.1.2](https://github.com/adam-26/react-router-metadata/compare/v1.1.1...v1.1.2) (2017-12-14)
 

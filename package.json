@@ -1,6 +1,6 @@
 {
   "name": "react-router-metadata",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Use metadata with reacr-router v4+ and stream SSR",
   "main": "lib/index.js",
   "directories": {
