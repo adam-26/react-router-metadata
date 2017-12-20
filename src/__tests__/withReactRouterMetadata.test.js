@@ -28,7 +28,7 @@ describe('withReactRouterMetadata', () => {
 
     beforeEach(() => {
         mapParamsToProps = jest.fn();
-        Component = withReactRouterMetadata(mapParamsToProps)(TestComponent);
+        Component = withReactRouterMetadata({ mapParamsToProps })(TestComponent);
     });
 
     test('throws if static action method is missing', () => {
@@ -53,7 +53,7 @@ describe('withReactRouterMetadata', () => {
 
         // Required to mock the getMetadata func
         TestComponent.getMetadata = jest.fn();
-        Component = withReactRouterMetadata(mapParamsToProps)(TestComponent);
+        Component = withReactRouterMetadata({ mapParamsToProps })(TestComponent);
 
         mapParamsToProps.mockReturnValueOnce(getMdProps);
         TestComponent.getMetadata.mockReturnValueOnce({ title: 'TITLE' });

@@ -10,24 +10,29 @@ import { withMetadata, Metadata, METADATA_PROP_NAME } from 'react-html-metadata'
 export const GET_METADATA_METHOD_NAME = 'getMetadata';
 export const PRELOAD_METADATA_METHOD_NAME = 'preloadMetadata';
 
-export default function withReactRouterMetadata(
-        mapParamsToProps?: (actionParams: Object, routerCtx: Object) => Object = (params) => params,
-        opts?: {
+export default function withReactRouterMetadata(options?: {
+            mapParamsToProps?: (actionParams: Object, routerCtx: Object) => Object,
             staticMethodName?: string,
             componentStaticMethodName?: string,
             metadataPropName?: string
         } = {}
     ) {
-    const options = Object.assign({
+    const {
+        mapParamsToProps,
+        staticMethodName,
+        componentStaticMethodName,
+        metadataPropName
+    } = Object.assign({
+        mapParamsToProps: (params) => params,
         staticMethodName: PRELOAD_METADATA_METHOD_NAME,
         componentStaticMethodName: GET_METADATA_METHOD_NAME,
         metadataPropName: METADATA_PROP_NAME
-    }, opts);
+    }, options);
 
     return (Component) => {
         const componentName = getDisplayName(Component);
-        const getMetadata = Component[options.componentStaticMethodName];
-        invariant(typeof getMetadata === 'function', `Component ${componentName} requires a static function named '${options.componentStaticMethodName}' to use withReactRouterMetadata().`);
+        const getMetadata = Component[componentStaticMethodName];
+        invariant(typeof getMetadata === 'function', `Component ${componentName} requires a static function named '${componentStaticMethodName}' to use withReactRouterMetadata().`);
 
         class ReactRouterMetadata extends Component {
             static propTypes = {
@@ -86,8 +91,8 @@ export default function withReactRouterMetadata(
         }
 
         // Static action method, using name as defined in options
-        ReactRouterMetadata[options.staticMethodName] = function (routeProps, actionParams, routerCtx) {
-            const { [options.metadataPropName]: htmlMetadata, ...params } = actionParams;
+        ReactRouterMetadata[staticMethodName] = function (routeProps, actionParams, routerCtx) {
+            const { [metadataPropName]: htmlMetadata, ...params } = actionParams;
             if (typeof htmlMetadata === 'undefined') {
                 // No htmlMetadata instance, no metadata will be pre-loaded.
                 // - this can be used to prevent pre-loading on client renders
@@ -95,7 +100,7 @@ export default function withReactRouterMetadata(
             }
 
             // Verify valid metadata type
-            invariant(htmlMetadata instanceof Metadata, `actionParams requires prop ${options.metadataPropName} to be an instance of Metadata.`);
+            invariant(htmlMetadata instanceof Metadata, `actionParams requires prop ${metadataPropName} to be an instance of Metadata.`);
 
             const props = mapParamsToProps(params, routerCtx);
             htmlMetadata.appendMetadata(getMetadata(routeProps, props));
