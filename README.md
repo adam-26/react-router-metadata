@@ -18,7 +18,7 @@ This package is intended to be used with other packages that invoke the static m
 
 **You should use one of the current implementations**:
 
-  * [react-router-metadata-action](https://github.com/adam-26/react-router-metadata-action)
+  * [react-router-dispatcher-metadata](https://github.com/adam-26/react-router-dispatcher-metadata)
 
 #### Defining metadata
 
@@ -61,7 +61,7 @@ const mapParamsToProps(params, routerCtx) => {
   };
 };
 
-export default withReactRouterMetadata(mapParamsToProps)(MetadataDemo);
+export default withReactRouterMetadata({ mapParamsToProps })(MetadataDemo);
 
 ```
 
@@ -82,21 +82,17 @@ yarn add react-router-metadata
 
 ### API
 
-`withReactRouterMetadata(mapParamsToProps, options)`
+`withReactRouterMetadata(options)`
 
-#### Parameters
+#### Options
 
-##### `mapParamsToProps`: Optional
+`mapParamsToProps?: (params: Object, routerCtx: { route: Object, routeComponentKey: string }) => Object`: Optional
 
-`(params: Object, routerCtx: { route: Object, routeComponentKey: string }) => Object`
+* Optionally, use a function that maps parameters to match the component props.
 
-Optionally, use a function that maps parameters to match the component props.
+* This is **only required if your `getMetadata` implementation uses prop values**.
 
-This is **only required if your `getMetadata` implementation uses prop values**.
-
-##### `options`
-
-* `staticMethodName?: string`:
+`staticMethodName?: string`:
 
 * The static _method name_ that **must** be invoked on the component before render.
 
