@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.2"></a>
+## [1.3.2](https://github.com/adam-26/react-router-metadata/compare/v1.3.1...v1.3.2) (2017-12-21)
+
+
+### Bug Fixes
+
+* **code:** Support stateless components ([15105cd](https://github.com/adam-26/react-router-metadata/commit/15105cd))
+* **code:** Support stateless components ([#15](https://github.com/adam-26/react-router-metadata/issues/15)) ([417786b](https://github.com/adam-26/react-router-metadata/commit/417786b))
+
+
+
 <a name="1.3.1"></a>
 ## [1.3.1](https://github.com/adam-26/react-router-metadata/compare/v1.3.0...v1.3.1) (2017-12-20)
 
