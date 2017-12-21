@@ -35,6 +35,13 @@ describe('withReactRouterMetadata', () => {
        expect(() => withReactRouterMetadata()(() => {})).toThrow();
     });
 
+    test('does not throw when using stateless component', () => {
+        const Stateless = () => {};
+        Stateless.getMetadata = () => {};
+
+        expect(() => withReactRouterMetadata()(Stateless)).not.toThrow();
+    });
+
     test('static action method does not throw if no \'metadata\' is passed', () => {
         const md = Component.preloadMetadata({}, {}, {});
         expect(md).toBeUndefined();

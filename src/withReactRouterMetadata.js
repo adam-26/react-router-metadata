@@ -34,7 +34,7 @@ export default function withReactRouterMetadata(options?: {
         const getMetadata = Component[componentStaticMethodName];
         invariant(typeof getMetadata === 'function', `Component ${componentName} requires a static function named '${componentStaticMethodName}' to use withReactRouterMetadata().`);
 
-        class ReactRouterMetadata extends Component {
+        class ReactRouterMetadata extends React.Component {
             static propTypes = {
                 // react-router props
                 match: PropTypes.object,
