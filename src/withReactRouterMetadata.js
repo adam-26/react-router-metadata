@@ -48,15 +48,13 @@ export default function withReactRouterMetadata(options?: {
             constructor(props, context) {
                 super(props, context);
                 this.state = {
-                    currentMetadata: {}
+                    currentMetadata: null
                 };
             }
 
             setMetadata(nextMetadata = null) {
-                this.props.metadata.update(this.state.currentMetadata, nextMetadata || {});
-                if (nextMetadata !== null) {
-                    this.setState({ currentMetadata: nextMetadata });
-                }
+                this.props.metadata.update(this.state.currentMetadata, nextMetadata);
+                this.setState({ currentMetadata: nextMetadata });
             }
 
             componentWillReceiveProps(nextProps) {
