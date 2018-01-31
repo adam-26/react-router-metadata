@@ -108,10 +108,10 @@ describe('withReactRouterMetadata', () => {
                title: 'World'
            })
         });
-        expect(md.update.mock.calls).toHaveLength(2);
+        expect(md.update.mock.calls).toHaveLength(1);
 
         // invokes 'componentWillUnmount()'
         wrapper.unmount();
-        expect(md.update.mock.calls).toHaveLength(3);
+        expect(md.update.mock.calls).toHaveLength(2);
     });
 });
