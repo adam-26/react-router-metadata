@@ -58,6 +58,11 @@ export default function withReactRouterMetadata(options?: {
             }
 
             componentWillReceiveProps(nextProps) {
+                if (this.props.location === nextProps.location) {
+                    // unnecessary to update
+                    return;
+                }
+
                 // eslint-disable-next-line no-unused-vars
                 const { location, match, history, ...props } = nextProps;
                 this.setMetadata(getMetadata({ location, match }, props));
