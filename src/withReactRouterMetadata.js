@@ -53,8 +53,12 @@ export default function withReactRouterMetadata(options?: {
             }
 
             setMetadata(nextMetadata = null) {
-                this.props.metadata.update(this.state.currentMetadata, nextMetadata);
-                this.setState({ currentMetadata: nextMetadata });
+                const { currentMetadata } = this.state;
+                const appliedMetadata = this.props.metadata.update(currentMetadata, nextMetadata);
+
+                if (appliedMetadata !== currentMetadata) {
+                    this.setState({currentMetadata: appliedMetadata});
+                }
             }
 
             componentWillReceiveProps(nextProps) {
