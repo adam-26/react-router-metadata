@@ -3,8 +3,8 @@
 [![npm](https://img.shields.io/npm/v/react-router-metadata.svg)](https://www.npmjs.com/package/react-router-metadata)
 [![npm](https://img.shields.io/npm/dm/react-router-metadata.svg)](https://www.npmjs.com/package/react-router-metadata)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/adam-26/react-router-metadata/master.svg)](https://circleci.com/gh/adam-26/react-router-metadata/tree/master)
-[![Code Climate](https://img.shields.io/codeclimate/coverage/github/adam-26/react-router-metadata.svg)](https://codeclimate.com/github/adam-26/react-router-metadata)
-[![Code Climate](https://img.shields.io/codeclimate/github/adam-26/react-router-metadata.svg)](https://codeclimate.com/github/adam-26/react-router-metadata)
+[![Maintainability](https://api.codeclimate.com/v1/badges/01536aa6e4ae39932ba2/maintainability)](https://codeclimate.com/github/adam-26/react-router-metadata/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/01536aa6e4ae39932ba2/test_coverage)](https://codeclimate.com/github/adam-26/react-router-metadata/test_coverage)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 Assigns HTML metadata to [react-router-config](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config) routes using static functions.
@@ -34,9 +34,8 @@ class MetadataDemo extends Component {
     name: PropTypes.string
   };
 
-  static getMetadata(routeProps, props) {
-    const { location, match } = routeProps;
-    const { name } = props;
+  static getMetadata(props) {
+    const { name, location, match } = props;
 
     // Return the metadata
     // see react-html-metadata docs for permitted syntax
