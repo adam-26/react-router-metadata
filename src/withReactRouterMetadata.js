@@ -69,13 +69,13 @@ export default function withReactRouterMetadata(options?: {
 
                 // eslint-disable-next-line no-unused-vars
                 const { location, match, history, ...props } = nextProps;
-                this.setMetadata(getMetadata({ location, match }, props));
+                this.setMetadata(getMetadata({ ...props, location, match }));
             }
 
             componentWillMount() {
                 // eslint-disable-next-line no-unused-vars
                 const { location, match, history, ...props } = this.props;
-                this.setMetadata(getMetadata({ location, match }, props));
+                this.setMetadata(getMetadata({ ...props, location, match }));
             }
 
             componentWillUnmount() {
@@ -98,8 +98,8 @@ export default function withReactRouterMetadata(options?: {
         }
 
         // Static action method, using name as defined in options
-        ReactRouterMetadata[staticMethodName] = function (routeProps, actionParams, routerCtx) {
-            const { [metadataPropName]: htmlMetadata, ...params } = actionParams;
+        ReactRouterMetadata[staticMethodName] = function (props, routerCtx) {
+            const { [metadataPropName]: htmlMetadata, location, match, ...actionProps } = props;
             if (typeof htmlMetadata === 'undefined') {
                 // No htmlMetadata instance, no metadata will be pre-loaded.
                 // - this can be used to prevent pre-loading on client renders
@@ -107,10 +107,10 @@ export default function withReactRouterMetadata(options?: {
             }
 
             // Verify valid metadata type
-            invariant(htmlMetadata instanceof Metadata, `actionParams requires prop ${metadataPropName} to be an instance of Metadata.`);
+            invariant(htmlMetadata instanceof Metadata, `[react-router-metadata] "${staticMethodName}" requires prop "${metadataPropName}" be an instance of Metadata.`);
 
-            const props = mapParamsToProps(params, routerCtx);
-            htmlMetadata.appendMetadata(getMetadata(routeProps, props));
+            const mappedProps = mapParamsToProps(actionProps, routerCtx);
+            htmlMetadata.appendMetadata(getMetadata({ ...mappedProps, location, match }));
         };
 
         ReactRouterMetadata.displayName = `withReactRouterMetadata(${componentName})`;
