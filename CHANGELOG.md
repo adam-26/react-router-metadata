@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/adam-26/react-router-metadata/compare/v1.3.5...v2.0.0) (2018-03-01)
+
+
+### Bug Fixes
+
+* **api:** Update static function args ([6185444](https://github.com/adam-26/react-router-metadata/commit/6185444))
+
+
+* @adam-26 fix(api): Update static function args (#19) ([864b3ff](https://github.com/adam-26/react-router-metadata/commit/864b3ff)), closes [#19](https://github.com/adam-26/react-router-metadata/issues/19)
+
+
+### BREAKING CHANGES
+
+* Update API to be consistent with react-router-dispatcher for static method usage.
+* **api:** Update API to be consistent with react-router-dispatcher for static method usage.
+
+
+
 <a name="1.3.5"></a>
 ## [1.3.5](https://github.com/adam-26/react-router-metadata/compare/v1.3.4...v1.3.5) (2018-02-07)
 
