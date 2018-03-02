@@ -68,13 +68,19 @@ export default function withReactRouterMetadata(options?: {
                 }
 
                 // eslint-disable-next-line no-unused-vars
-                const { location, match, history, ...props } = nextProps;
+                const { [metadataPropName]: htmlMetadata, location, match, history, ...props } = nextProps;
                 this.setMetadata(getMetadata({ ...props, location, match }));
             }
 
             componentWillMount() {
                 // eslint-disable-next-line no-unused-vars
-                const { location, match, history, ...props } = this.props;
+                const { [metadataPropName]: htmlMetadata, location, match, history, ...props } = this.props;
+                if (htmlMetadata.isServerStreamRender()) {
+                    // The HTML Metadata should have been loaded before the react render lifecycle
+                    // Therefore, no need to load the metadata again for the server render
+                    return;
+                }
+
                 this.setMetadata(getMetadata({ ...props, location, match }));
             }
 
