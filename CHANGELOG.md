@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/adam-26/react-router-metadata/compare/v2.0.0...v2.1.0) (2018-03-02)
+
+
+### Features
+
+* **code:** Update react-html-metadata ([169fa50](https://github.com/adam-26/react-router-metadata/commit/169fa50))
+* **code:** Update react-html-metadata ([#20](https://github.com/adam-26/react-router-metadata/issues/20)) ([1fe12b3](https://github.com/adam-26/react-router-metadata/commit/1fe12b3))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/adam-26/react-router-metadata/compare/v1.3.5...v2.0.0) (2018-03-01)
 
